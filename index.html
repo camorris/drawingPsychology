@@ -16,24 +16,37 @@ canvas.height = window.innerHeight;
 ctx.strokestyle = '#BADASS';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
+ctx.lineWidth =100;
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+let hue = 0
 
 function draw(e){
   if(!isDrawing) return;
   console.log(e)
+    ctx.strokeStyle = `hsl(${hue}, 100%, %50)`;
+  ctx.beginPath();
+  //start from
+  ctx.moveTo(lastX,lastY);
+  //go to
+  ctx.moveTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  [lastX, lastY] = [e.offsetX, e.offsetY]
+  hue++;
 }
+
+canvas.addEventListener('mousedown', (e)=> {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY]
+});
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mousedown', ()=>isDrawing = true);
 canvas.addEventListener('mouseup', ()=>isDrawing = false);
 canvas.addEventListener('mouseout', ()=>isDrawing = false);
 
 </script>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+
 <style>
   html, body {
     margin:0;
