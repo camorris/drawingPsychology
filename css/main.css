@@ -1,4 +1,11 @@
 html, body {
   margin:0;
-  background-color: red;
+
+}
+
+cavas{
+  width: 800px;
+  height: 800px;
+  border: 2px solid black;
+  margin: 0 auto;
 }
