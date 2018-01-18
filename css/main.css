@@ -9,3 +9,8 @@ cavas{
   border: 2px solid black;
   margin: 0 auto;
 }
+
+p{
+  margin: 0 auto;
+  font-family: new;
+}
