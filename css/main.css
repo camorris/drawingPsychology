@@ -14,3 +14,7 @@ p{
   margin: 0 auto;
   font-family: new;
 }
+
+li{
+  list-style-type: none;
+}
