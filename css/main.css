@@ -13,8 +13,17 @@ cavas{
 p{
   margin: 0 auto;
   font-family: new;
+  padding: 12px;
+}
+h1{
+  padding: 12px;
 }
 
-li{
+ul{
   list-style-type: none;
+  float: right;
+}
+li{
+  display: inline-block;
+  padding: 12px;
 }
