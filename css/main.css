@@ -4,11 +4,10 @@ html, body {
 
 }
 
-cavas{
-  width: 800px;
-  height: 800px;
+#draw{
   border: 2px solid black;
-  margin: 0 auto;
+  width: 600px;
+  height: 600px;
 }
 
 p{
